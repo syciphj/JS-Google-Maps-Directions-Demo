@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Henri's Directions Map Vanilla JS</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <script type="script" src="./index.js"></script>
+  </head>
+  <body>
+    <div class="side-panel">
+      <div class="side-panel__options">
+        <ul>
+          <li class="driving-img travel selected" travelMode="DRIVING"></li>
+          <li
+            class="transit-img travel"
+            travelMode="TRANSIT"
+            transitMode="TRAIN"
+          ></li>
+        </ul>
+      </div>
+      <div class="side-panel__search">
+        <form id="form" autocomplete="off">
+          <div class="input-group">
+            <label for="origin" class="hidden">Address 1</label>
+            <input
+              type="text"
+              id="origin"
+              name="origin"
+              class="input input--address"
+              placeholder="Enter a starting point here"
+              value="Gare Centrale routière, Luxembourg"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="destination" class="hidden">Address 2</label>
+            <input
+              type="text"
+              id="destination"
+              name="destination"
+              class="input input--address"
+              placeholder="Enter a destination"
+              value="Kirchberg, Luxembourg"
+              required
+            />
+          </div>
+          <button id="submit" type="submit" class="btn">Get Directions</button>
+        </form>
+      </div>
+      <div class="loading hidden">Loading results...</div>
+      <div class="side-panel__results hidden" id="panel-results">
+        <h1>Available Routes</h1>
+      </div>
+    </div>
+    <div id="map"></div>
+    <!-- Replace YOUR_API_KEY with your Google Maps Platform API key
+    Be sure to enable: Maps Javascript API, Directions API  -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+      defer
+    ></script>
+  </body>
+</html>
